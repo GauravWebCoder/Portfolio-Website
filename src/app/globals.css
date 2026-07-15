@@ -1,0 +1,214 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #08070d;
+  --bg-2: #0c0b13;
+  --fg: #f3f1fb;
+  --muted: rgba(243, 241, 251, 0.62);
+  --faint: rgba(243, 241, 251, 0.38);
+  --accent: #7c66ff;
+  --accent-2: #a996ff;
+  --card: rgba(255, 255, 255, 0.035);
+  --card-2: rgba(255, 255, 255, 0.06);
+  --brd: rgba(255, 255, 255, 0.09);
+  --brd-2: rgba(255, 255, 255, 0.14);
+  --track: rgba(255, 255, 255, 0.1);
+}
+
+:root[data-theme="light"] {
+  --bg: #eeecf3;
+  --bg-2: #ffffff;
+  --fg: #16141f;
+  --muted: rgba(22, 20, 31, 0.62);
+  --faint: rgba(22, 20, 31, 0.42);
+  --accent: #6b4dff;
+  --accent-2: #8b73ff;
+  --card: rgba(255, 255, 255, 0.7);
+  --card-2: rgba(255, 255, 255, 0.9);
+  --brd: rgba(20, 18, 30, 0.1);
+  --brd-2: rgba(20, 18, 30, 0.16);
+  --track: rgba(20, 18, 30, 0.1);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-2: var(--bg-2);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-card: var(--card);
+  --color-card-2: var(--card-2);
+  --color-brd: var(--brd);
+  --color-brd-2: var(--brd-2);
+  --color-track: var(--track);
+  --font-sans: var(--font-sora);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  transition:
+    background 0.5s ease,
+    color 0.5s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input,
+textarea,
+button {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+.text-gradient {
+  background: linear-gradient(100deg, var(--accent), var(--accent-2));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+[data-hover-underline] {
+  position: relative;
+}
+
+[data-hover-underline]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+[data-hover-underline]:hover::after,
+[data-hover-underline][data-active="1"]::after {
+  transform: scaleX(1);
+}
+
+.cursor-none-desktop,
+.cursor-none-desktop * {
+  cursor: none !important;
+}
+
+.cursor-ring--active {
+  width: 64px !important;
+  height: 64px !important;
+  background: color-mix(in srgb, var(--accent) 22%, transparent) !important;
+}
+
+:root[data-theme="light"] .eclipse-wrap {
+  opacity: 0.42;
+  filter: saturate(0.7);
+}
+
+@media (max-width: 900px) {
+  .eclipse-wrap {
+    opacity: 0.5 !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  .fan-card-left,
+  .fan-card-right {
+    margin-top: 0;
+  }
+  .fan-card-left:hover,
+  .fan-card-right:hover {
+    margin-top: 0;
+  }
+}
+
+.fan-card {
+  transition:
+    transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1),
+    margin-top 0.55s cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 0.55s ease;
+}
+
+.fan-card-left {
+  transform: rotate(-17deg);
+  margin-top: 72px;
+  box-shadow:
+    0 35px 70px -20px rgba(0, 0, 0, 0.8),
+    0 18px 45px -22px rgba(124, 102, 255, 0.25);
+}
+.fan-card-left:hover {
+  transform: rotate(-5deg) translateY(-22px) scale(1.045);
+  margin-top: 52px;
+  box-shadow:
+    0 45px 95px -20px rgba(0, 0, 0, 0.6),
+    0 30px 80px -16px rgba(124, 102, 255, 0.45);
+}
+
+.fan-card-center {
+  transform: scale(1.02);
+  box-shadow:
+    0 45px 100px -20px rgba(0, 0, 0, 0.7),
+    0 25px 70px -18px rgba(124, 102, 255, 0.45);
+}
+.fan-card-center:hover {
+  transform: translateY(-24px) scale(1.07);
+  box-shadow:
+    0 55px 120px -20px rgba(0, 0, 0, 0.55),
+    0 30px 80px -16px rgba(124, 102, 255, 0.4);
+}
+
+.fan-card-right {
+  transform: rotate(17deg);
+  margin-top: 72px;
+  box-shadow:
+    0 35px 70px -20px rgba(0, 0, 0, 0.8),
+    0 18px 45px -22px rgba(124, 102, 255, 0.25);
+}
+.fan-card-right:hover {
+  transform: rotate(5deg) translateY(-22px) scale(1.045);
+  margin-top: 52px;
+  box-shadow:
+    0 45px 95px -20px rgba(0, 0, 0, 0.6),
+    0 30px 80px -16px rgba(124, 102, 255, 0.45);
+}
+
+.fan-card-sheen {
+  background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.08) 50%, transparent 70%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
