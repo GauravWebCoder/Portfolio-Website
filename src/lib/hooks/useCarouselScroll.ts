@@ -22,6 +22,7 @@ export function useCarouselScroll<T extends HTMLElement>() {
     let direction: 1 | -1 = 1;
     let autoPaused = false;
     let resumeTimer: number | undefined;
+    let position = el.scrollLeft;
 
     let isDragging = false;
     let dragMoved = false;
@@ -51,16 +52,18 @@ export function useCarouselScroll<T extends HTMLElement>() {
       if (!autoPaused && !isDragging) {
         const max = el.scrollWidth - el.clientWidth;
         if (max > 1) {
-          let next = el.scrollLeft + AUTO_SCROLL_SPEED * direction;
-          if (next >= max) {
-            next = max;
+          position += AUTO_SCROLL_SPEED * direction;
+          if (position >= max) {
+            position = max;
             direction = -1;
-          } else if (next <= 0) {
-            next = 0;
+          } else if (position <= 0) {
+            position = 0;
             direction = 1;
           }
-          el.scrollLeft = next;
+          el.scrollLeft = position;
         }
+      } else {
+        position = el.scrollLeft;
       }
       rafId = requestAnimationFrame(tick);
     };
