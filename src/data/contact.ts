@@ -11,12 +11,15 @@ export const CONTACT_INFO = [
 export type SocialLink = {
   label: string;
   icon: IconType;
-  // TODO: real profile URL
   href: string | null;
 };
 
 export const SOCIAL_LINKS: SocialLink[] = [
-  { label: "LinkedIn", icon: FaLinkedinIn, href: "https://www.linkedin.com/in/gaurav-mathpal/"},
+  {
+    label: "LinkedIn",
+    icon: FaLinkedinIn,
+    href: "https://www.linkedin.com/in/gaurav-mathpal/",
+  },
   { label: "GitHub", icon: FaGithub, href: "https://github.com/GauravMathpal" },
   { label: "X", icon: FaXTwitter, href: "https://twitter.com" },
   { label: "YouTube", icon: FaYoutube, href: "https://youtube.com" },

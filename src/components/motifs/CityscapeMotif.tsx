@@ -9,7 +9,8 @@ export function CityscapeMotif() {
       <div
         className="absolute inset-0"
         style={{
-          background: "radial-gradient(circle at 30% 20%, rgba(169,150,255,.25), transparent 55%)",
+          background:
+            "radial-gradient(circle at 30% 20%, rgba(169,150,255,.25), transparent 55%)",
         }}
       />
       <div className="absolute inset-x-0 bottom-0 flex items-end gap-1 px-2">
@@ -19,7 +20,8 @@ export function CityscapeMotif() {
             className="flex-1 rounded-t-sm"
             style={{
               height: `${h}%`,
-              background: "linear-gradient(180deg, rgba(124,102,255,.35), rgba(8,7,13,.9))",
+              background:
+                "linear-gradient(180deg, rgba(124,102,255,.35), rgba(8,7,13,.9))",
             }}
           />
         ))}

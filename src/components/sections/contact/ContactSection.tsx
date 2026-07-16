@@ -26,14 +26,14 @@ export function ContactSection({
     <section
       className={cn(
         "relative z-[2] px-5 pb-[100px] sm:px-8 lg:px-14",
-        bordered ? "border-t border-brd bg-bg-2 pt-[100px]" : "pt-[150px]",
+        bordered ? "border-brd bg-bg-2 border-t pt-[100px]" : "pt-[150px]",
       )}
     >
       <Container size="narrow" className="max-w-[1100px]">
         {eyebrow && (
           <Reveal>
-            <div className="mb-1.5 flex items-center gap-2.5 text-[15px] text-muted">
-              {eyebrow} <span className="text-xs text-accent">◆</span>
+            <div className="text-muted mb-1.5 flex items-center gap-2.5 text-[15px]">
+              {eyebrow} <span className="text-accent text-xs">◆</span>
             </div>
           </Reveal>
         )}
@@ -44,10 +44,12 @@ export function ContactSection({
         </Reveal>
         {description && (
           <Reveal delay={60}>
-            <p className="mt-2 mb-11 text-base text-muted">{description}</p>
+            <p className="text-muted mt-2 mb-11 text-base">{description}</p>
           </Reveal>
         )}
-        <div className={cn("grid gap-13 lg:grid-cols-2", !description && "mt-11")}>
+        <div
+          className={cn("grid gap-13 lg:grid-cols-2", !description && "mt-11")}
+        >
           <Reveal delay={80}>
             <div className="flex flex-col gap-6">
               <ContactInfoList />

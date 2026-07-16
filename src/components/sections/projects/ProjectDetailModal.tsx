@@ -39,8 +39,13 @@ export function ProjectDetailModal({
             </Dialog.Overlay>
             <Dialog.Content asChild forceMount>
               <motion.div
-                className="fixed top-1/2 left-1/2 z-[960] max-h-[85vh] w-[calc(100vw-40px)] max-w-[640px] -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-[24px] border border-brd-2 bg-bg-2 p-8 focus:outline-none"
-                initial={{ opacity: 0, scale: 0.96, y: 12, filter: "blur(6px)" }}
+                className="border-brd-2 bg-bg-2 fixed top-1/2 left-1/2 z-[960] max-h-[85vh] w-[calc(100vw-40px)] max-w-[640px] -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-[24px] border p-8 focus:outline-none"
+                initial={{
+                  opacity: 0,
+                  scale: 0.96,
+                  y: 12,
+                  filter: "blur(6px)",
+                }}
                 animate={{ opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }}
                 exit={{ opacity: 0, scale: 0.96, y: 12, filter: "blur(6px)" }}
                 transition={{ duration: 0.35, ease: [0.2, 0.7, 0.2, 1] }}
@@ -50,34 +55,37 @@ export function ProjectDetailModal({
                     <Dialog.Title className="font-sans text-2xl font-bold">
                       {project.name}
                     </Dialog.Title>
-                    <span className="rounded-full bg-accent/18 px-2.5 py-1 text-[10px] font-medium text-accent-2">
+                    <span className="bg-accent/18 text-accent-2 rounded-full px-2.5 py-1 text-[10px] font-medium">
                       {project.tag}
                     </span>
                   </div>
                   <Dialog.Close
                     aria-label="Close"
                     data-cursor="1"
-                    className="flex size-9 flex-none items-center justify-center rounded-full border border-brd bg-card text-fg"
+                    className="border-brd bg-card text-fg flex size-9 flex-none items-center justify-center rounded-full border"
                   >
                     ✕
                   </Dialog.Close>
                 </div>
 
                 <Dialog.Description className="sr-only">
-                  Full details, tech stack, and links for the {project.name} project.
+                  Full details, tech stack, and links for the {project.name}{" "}
+                  project.
                 </Dialog.Description>
 
-                <div className="mb-6 h-[240px] overflow-hidden rounded-2xl border border-brd">
+                <div className="border-brd mb-6 h-[240px] overflow-hidden rounded-2xl border">
                   <ProjectMotif motif={project.motif} />
                 </div>
 
-                <p className="mb-6 text-[15px] leading-[1.7] text-muted">{project.description}</p>
+                <p className="text-muted mb-6 text-[15px] leading-[1.7]">
+                  {project.description}
+                </p>
 
                 <div className="mb-7 flex flex-wrap gap-2">
                   {project.stack.map((s) => (
                     <span
                       key={s}
-                      className="rounded-md border border-brd bg-card-2 px-2.5 py-1 font-mono text-[11px] text-muted"
+                      className="border-brd bg-card-2 text-muted rounded-md border px-2.5 py-1 font-mono text-[11px]"
                     >
                       {s}
                     </span>
@@ -85,7 +93,7 @@ export function ProjectDetailModal({
                 </div>
 
                 {hasLinks && (
-                  <div className="flex flex-wrap gap-3 border-t border-brd pt-6">
+                  <div className="border-brd flex flex-wrap gap-3 border-t pt-6">
                     {project.liveUrl &&
                       (project.liveUrl.startsWith("/") ? (
                         <TransitionLink

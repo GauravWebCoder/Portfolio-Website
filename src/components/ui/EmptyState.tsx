@@ -21,7 +21,7 @@ export function EmptyState({
           {title}
         </SectionHeading>
         <Reveal delay={120}>
-          <p className="max-w-[440px] text-base text-muted">{description}</p>
+          <p className="text-muted max-w-[440px] text-base">{description}</p>
         </Reveal>
         {cta && (
           <Reveal delay={180}>

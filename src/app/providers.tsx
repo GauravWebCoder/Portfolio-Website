@@ -10,7 +10,11 @@ import { Footer } from "@/components/layout/Footer";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem={false}>
+    <ThemeProvider
+      attribute="data-theme"
+      defaultTheme="dark"
+      enableSystem={false}
+    >
       <MotionConfig reducedMotion="user">
         <PageTransitionProvider>
           <CustomCursor />

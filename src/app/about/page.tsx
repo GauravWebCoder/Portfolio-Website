@@ -29,7 +29,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[340px_1fr]">
           <Reveal>
             {portraitSrc ? (
-              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[20px] border border-brd">
+              <div className="border-brd relative aspect-[3/4] w-full overflow-hidden rounded-[20px] border">
                 <Image
                   src={portraitSrc}
                   alt="Gaurav Mathpal"

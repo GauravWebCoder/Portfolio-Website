@@ -27,9 +27,14 @@ export async function submitContact(
     const fieldErrors: Record<string, string> = {};
     for (const issue of parsed.error.issues) {
       const key = issue.path[0];
-      if (typeof key === "string" && !fieldErrors[key]) fieldErrors[key] = issue.message;
+      if (typeof key === "string" && !fieldErrors[key])
+        fieldErrors[key] = issue.message;
     }
-    return { status: "error", message: "Please fix the errors below.", fieldErrors };
+    return {
+      status: "error",
+      message: "Please fix the errors below.",
+      fieldErrors,
+    };
   }
 
   const { name, email, subject, message } = parsed.data;
@@ -49,7 +54,9 @@ export async function submitContact(
       from: "Portfolio Contact <onboarding@resend.dev>",
       to: site.email,
       replyTo: email,
-      subject: subject ? `[Portfolio] ${subject}` : `[Portfolio] New message from ${name}`,
+      subject: subject
+        ? `[Portfolio] ${subject}`
+        : `[Portfolio] New message from ${name}`,
       text: `From: ${name} <${email}>\n\n${message}`,
     });
   } catch {
@@ -60,5 +67,9 @@ export async function submitContact(
     };
   }
 
-  return { status: "success", name, message: `Thanks ${name} — I'll get back to you soon.` };
+  return {
+    status: "success",
+    name,
+    message: `Thanks ${name} — I'll get back to you soon.`,
+  };
 }

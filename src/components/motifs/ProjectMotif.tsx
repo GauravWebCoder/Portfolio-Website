@@ -23,7 +23,8 @@ export function ProjectMotif({ motif }: { motif: ProjectMotifKey }) {
         <div
           className="flex h-full w-full items-center rounded-xl px-5"
           style={{
-            background: "linear-gradient(135deg, rgba(124,102,255,.14), rgba(8,7,13,.9))",
+            background:
+              "linear-gradient(135deg, rgba(124,102,255,.14), rgba(8,7,13,.9))",
           }}
         >
           <Waveform />

@@ -20,7 +20,7 @@ export function Nav() {
 
   return (
     <nav
-      className="fixed inset-x-0 top-0 z-[200] flex items-center justify-between border-b border-brd px-5 py-[22px] backdrop-blur-md sm:px-8 lg:px-14"
+      className="border-brd fixed inset-x-0 top-0 z-[200] flex items-center justify-between border-b px-5 py-[22px] backdrop-blur-md sm:px-8 lg:px-14"
       style={{ background: "color-mix(in srgb, var(--bg) 55%, transparent)" }}
     >
       <TransitionLink
@@ -48,7 +48,7 @@ export function Nav() {
                 data-active={active ? "1" : undefined}
                 className={cn(
                   "cursor-pointer py-1 transition-colors",
-                  active ? "font-semibold text-fg" : "text-muted hover:text-fg",
+                  active ? "text-fg font-semibold" : "text-muted hover:text-fg",
                 )}
                 aria-current={active ? "page" : undefined}
               >
@@ -67,14 +67,14 @@ export function Nav() {
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="flex size-10 items-center justify-center rounded-full border border-brd-2 bg-card text-fg"
+          className="border-brd-2 bg-card text-fg flex size-10 items-center justify-center rounded-full border"
         >
           <span className="text-lg">{open ? "✕" : "☰"}</span>
         </button>
       </div>
 
       {open && (
-        <div className="absolute inset-x-0 top-full flex flex-col gap-1 border-b border-brd bg-bg-2 p-5 lg:hidden">
+        <div className="border-brd bg-bg-2 absolute inset-x-0 top-full flex flex-col gap-1 border-b p-5 lg:hidden">
           {NAV_ITEMS.map((item) => {
             const active = pathname === item.href;
             return (
@@ -85,7 +85,7 @@ export function Nav() {
                 aria-current={active ? "page" : undefined}
                 className={cn(
                   "rounded-lg px-3 py-3 text-base transition-colors",
-                  active ? "bg-card font-semibold text-fg" : "text-muted",
+                  active ? "bg-card text-fg font-semibold" : "text-muted",
                 )}
               >
                 {item.label}

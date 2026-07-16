@@ -1,6 +1,11 @@
 "use client";
 
-import { useCallback, useRef, type CSSProperties, type MouseEvent } from "react";
+import {
+  useCallback,
+  useRef,
+  type CSSProperties,
+  type MouseEvent,
+} from "react";
 import { useFinePointer } from "./useFinePointer";
 
 const STRENGTH_X = 0.3;
@@ -26,7 +31,9 @@ export function useMagnetic<T extends HTMLElement>() {
     ref.current.style.transform = "translate(0, 0)";
   }, []);
 
-  const style: CSSProperties = { transition: "transform .35s cubic-bezier(.2,.7,.2,1)" };
+  const style: CSSProperties = {
+    transition: "transform .35s cubic-bezier(.2,.7,.2,1)",
+  };
 
   return { ref, onMouseMove, onMouseLeave, style };
 }

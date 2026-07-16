@@ -18,10 +18,14 @@ export function SectionHeading({
   const Heading = as;
 
   return (
-    <div className={cn(align === "center" && "flex flex-col items-center text-center")}>
+    <div
+      className={cn(
+        align === "center" && "flex flex-col items-center text-center",
+      )}
+    >
       <Reveal>
-        <div className="mb-1.5 flex items-center gap-2.5 text-[15px] text-muted">
-          {eyebrow} <span className="text-xs text-accent">◆</span>
+        <div className="text-muted mb-1.5 flex items-center gap-2.5 text-[15px]">
+          {eyebrow} <span className="text-accent text-xs">◆</span>
         </div>
       </Reveal>
       <Reveal delay={60}>

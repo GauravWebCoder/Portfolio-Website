@@ -37,13 +37,26 @@ const variantClass = {
 };
 
 const variantStyle = {
-  solid: { background: "linear-gradient(100deg, var(--accent), var(--accent-2))" },
+  solid: {
+    background: "linear-gradient(100deg, var(--accent), var(--accent-2))",
+  },
   outline: undefined,
 };
 
 export function Button(props: ButtonProps) {
-  const { children, variant = "solid", icon, magnetic = true, className } = props;
-  const { ref, onMouseMove, onMouseLeave, style: magneticStyle } = useMagnetic<HTMLElement>();
+  const {
+    children,
+    variant = "solid",
+    icon,
+    magnetic = true,
+    className,
+  } = props;
+  const {
+    ref,
+    onMouseMove,
+    onMouseLeave,
+    style: magneticStyle,
+  } = useMagnetic<HTMLElement>();
 
   const content = (
     <>
@@ -53,7 +66,10 @@ export function Button(props: ButtonProps) {
   );
 
   const classes = cn(baseClass, variantClass[variant], className);
-  const style = { ...variantStyle[variant], ...(magnetic ? magneticStyle : {}) };
+  const style = {
+    ...variantStyle[variant],
+    ...(magnetic ? magneticStyle : {}),
+  };
   const magneticHandlers = magnetic ? { onMouseMove, onMouseLeave } : {};
 
   if ("href" in props && props.href) {

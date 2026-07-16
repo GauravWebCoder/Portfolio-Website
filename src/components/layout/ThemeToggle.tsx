@@ -8,7 +8,8 @@ export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
   const mounted = useMounted();
   const isDark = mounted ? resolvedTheme === "dark" : true;
-  const { ref, onMouseMove, onMouseLeave, style } = useMagnetic<HTMLButtonElement>();
+  const { ref, onMouseMove, onMouseLeave, style } =
+    useMagnetic<HTMLButtonElement>();
 
   return (
     <button
@@ -20,7 +21,7 @@ export function ThemeToggle() {
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
       style={style}
-      className="flex size-10 items-center justify-center rounded-full border border-brd-2 bg-card text-fg transition-colors"
+      className="border-brd-2 bg-card text-fg flex size-10 items-center justify-center rounded-full border transition-colors"
     >
       {mounted ? (isDark ? "☾" : "☀") : null}
     </button>

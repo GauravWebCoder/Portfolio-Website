@@ -78,9 +78,6 @@ export function PageTransitionProvider({
 
   const beginNavigation = useCallback(
     (href: string, navLabel: string) => {
-      // Already on this route — pushing again wouldn't remount template.tsx,
-      // so onRouteMounted would never fire and the curtain would get stuck
-      // covering forever. Nothing to transition to, so no-op.
       if (href === pathname) return;
       if (navigatingRef.current) return;
       navigatingRef.current = true;
@@ -98,10 +95,10 @@ export function PageTransitionProvider({
 
       setPhase("covering");
 
-      const tLabel = window.setTimeout(() => setLabelVisible(true), LABEL_DELAY_MS);
-      // Only swap the route once the curtain has fully covered the viewport —
-      // pushing immediately let the new page mount (and flash through the
-      // still-rising curtain) before it was actually opaque.
+      const tLabel = window.setTimeout(
+        () => setLabelVisible(true),
+        LABEL_DELAY_MS,
+      );
       const tPush = window.setTimeout(() => {
         router.push(href);
       }, COVER_SLIDE_MS);
@@ -134,7 +131,9 @@ export function PageTransitionProvider({
 export function usePageTransition() {
   const ctx = useContext(PageTransitionContext);
   if (!ctx) {
-    throw new Error("usePageTransition must be used within PageTransitionProvider");
+    throw new Error(
+      "usePageTransition must be used within PageTransitionProvider",
+    );
   }
   return ctx;
 }

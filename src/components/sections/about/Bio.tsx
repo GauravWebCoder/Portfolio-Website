@@ -10,7 +10,7 @@ export function Bio() {
             className={
               i === 0
                 ? "mb-[18px] text-lg leading-[1.7]"
-                : "mb-4 text-[15px] leading-[1.7] text-muted"
+                : "text-muted mb-4 text-[15px] leading-[1.7]"
             }
           >
             {paragraph}

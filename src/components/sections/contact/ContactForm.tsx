@@ -11,7 +11,10 @@ const fieldClass =
 const initialContactState: ContactState = { status: "idle" };
 
 export function ContactForm({ showSubject = true }: { showSubject?: boolean }) {
-  const [state, formAction, isPending] = useActionState(submitContact, initialContactState);
+  const [state, formAction, isPending] = useActionState(
+    submitContact,
+    initialContactState,
+  );
 
   if (state.status === "success") {
     return <SuccessPanel message={state.message ?? ""} />;
@@ -45,7 +48,12 @@ export function ContactForm({ showSubject = true }: { showSubject?: boolean }) {
         )}
       </div>
       {showSubject && (
-        <input data-cursor="1" name="subject" placeholder="Subject" className={fieldClass} />
+        <input
+          data-cursor="1"
+          name="subject"
+          placeholder="Subject"
+          className={fieldClass}
+        />
       )}
       <div>
         <textarea
@@ -57,10 +65,17 @@ export function ContactForm({ showSubject = true }: { showSubject?: boolean }) {
           className={`${fieldClass} resize-y`}
         />
         {state.fieldErrors?.message && (
-          <p className="mt-1 text-xs text-red-400">{state.fieldErrors.message}</p>
+          <p className="mt-1 text-xs text-red-400">
+            {state.fieldErrors.message}
+          </p>
         )}
       </div>
-      <Button type="submit" disabled={isPending} icon={<span>✈</span>} className="w-full">
+      <Button
+        type="submit"
+        disabled={isPending}
+        icon={<span>✈</span>}
+        className="w-full"
+      >
         {isPending ? "Sending…" : "Send Message"}
       </Button>
     </form>

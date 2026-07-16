@@ -27,11 +27,17 @@ export const metadata: Metadata = {
   formatDetection: { email: false, address: false, telephone: false },
 };
 
-const sameAs = SOCIAL_LINKS.map((s) => s.href).filter((href): href is string => Boolean(href));
+// Only include links that point to an actual profile page, not a bare
+// platform homepage (e.g. "https://twitter.com" with no handle) — schema.org
+// sameAs should uniquely identify the person, and a bare domain does the
+// opposite.
+const sameAs = SOCIAL_LINKS.map((s) => s.href)
+  .filter((href): href is string => Boolean(href))
+  .filter((href) => new URL(href).pathname.replace(/\/$/, "").length > 0);
 
 const personJsonLd = {
-  "@context": "https://schema.org",
   "@type": "Person",
+  "@id": `${site.url}/#person`,
   name: site.name,
   url: site.url,
   email: site.email,
@@ -39,6 +45,21 @@ const personJsonLd = {
   description: site.description,
   address: { "@type": "PostalAddress", addressRegion: site.location },
   ...(sameAs.length > 0 ? { sameAs } : {}),
+};
+
+const websiteJsonLd = {
+  "@type": "WebSite",
+  "@id": `${site.url}/#website`,
+  url: site.url,
+  name: site.name,
+  description: site.description,
+  publisher: { "@id": `${site.url}/#person` },
+  inLanguage: "en",
+};
+
+const jsonLdGraph = {
+  "@context": "https://schema.org",
+  "@graph": [personJsonLd, websiteJsonLd],
 };
 
 export default function RootLayout({
@@ -56,7 +77,7 @@ export default function RootLayout({
       <body className="flex min-h-full flex-col" suppressHydrationWarning>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
         />
         <AmbientBackground />
         <Providers>{children}</Providers>

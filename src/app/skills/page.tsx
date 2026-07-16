@@ -24,7 +24,7 @@ export default function SkillsPage() {
           <RevealGroup>
             {SKILL_GROUPS.map((group) => (
               <Card key={group.title}>
-                <div className="mb-4 font-mono text-xs tracking-[.14em] text-accent">
+                <div className="text-accent mb-4 font-mono text-xs tracking-[.14em]">
                   {group.title}
                 </div>
                 <div className="flex flex-wrap gap-2.5">

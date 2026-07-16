@@ -10,9 +10,6 @@ export type Project = {
   description: string;
   stack: string[];
   motif: ProjectMotifKey;
-  // DEMO PLACEHOLDER LINKS — obviously-fake example.com/github.com/example URLs
-  // so the project modal's link buttons are visible for now. Replace every
-  // field below with real URLs before/soon after deploying.
   github?: string;
   liveUrl?: string;
   youtube?: string;
@@ -46,7 +43,8 @@ export const PROJECTS: Project[] = [
     github: "https://github.com/GauravMathpal/VibeTune",
     liveUrl: "https://vibetune-mu.vercel.app/",
     youtube: "https://youtube.com/",
-    linkedin: "https://www.linkedin.com/posts/gaurav-mathpal_vibetune-ai-reactjs-ugcPost-7385353050099621888-ikCS/?highlightedUpdateUrn=urn%3Ali%3Aactivity%3A7385353051718619137&highlightedUpdateType=SOCIAL_SHARE&origin=SOCIAL_SHARE&utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAFYnNE0BWsJsUZpRSEAqwf3XCmIT2vy1syA",
+    linkedin:
+      "https://www.linkedin.com/feed/update/urn:li:activity:7385353051718619137/",
   },
   {
     slug: "portfolio",
@@ -92,7 +90,10 @@ export const PROJECTS: Project[] = [
   },
 ];
 
-export const PROJECT_FILTERS: { key: "all" | ProjectCategory; label: string }[] = [
+export const PROJECT_FILTERS: {
+  key: "all" | ProjectCategory;
+  label: string;
+}[] = [
   { key: "all", label: "All" },
   { key: "web-apps", label: "Web Apps" },
   { key: "tools", label: "Tools" },

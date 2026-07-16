@@ -1,6 +1,11 @@
 "use client";
 
-import { useCallback, useRef, type CSSProperties, type PointerEvent } from "react";
+import {
+  useCallback,
+  useRef,
+  type CSSProperties,
+  type PointerEvent,
+} from "react";
 import { useFinePointer } from "./useFinePointer";
 
 const MAX_TILT_DEG = 7;
@@ -19,8 +24,7 @@ export function useTilt<T extends HTMLElement>(baseRotateDeg = 0) {
       const rotateY = px * MAX_TILT_DEG * 2;
       const rotateX = -py * MAX_TILT_DEG * 2;
       ref.current.style.transition = "transform 80ms ease-out";
-      ref.current.style.transform =
-        `perspective(900px) rotate(${baseRotateDeg}deg) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px) scale(1.03)`;
+      ref.current.style.transform = `perspective(900px) rotate(${baseRotateDeg}deg) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px) scale(1.03)`;
     },
     [isFinePointer, baseRotateDeg],
   );

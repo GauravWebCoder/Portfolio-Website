@@ -1,9 +1,18 @@
+import type { Metadata } from "next";
 import { Eclipse } from "@/components/motifs/Eclipse";
 import { HeroIntro } from "@/components/sections/home/HeroIntro";
 import { CurrentlyPanel } from "@/components/sections/home/CurrentlyPanel";
 import { FanProjectCards } from "@/components/sections/home/FanProjectCards";
 import { ExploreGrid } from "@/components/sections/home/ExploreGrid";
 import { ContactSection } from "@/components/sections/contact/ContactSection";
+import { pageMetadata } from "@/lib/seo";
+import { site } from "@/data/site";
+
+export const metadata: Metadata = pageMetadata({
+  title: site.title,
+  description: site.description,
+  path: "",
+});
 
 export default function Home() {
   return (

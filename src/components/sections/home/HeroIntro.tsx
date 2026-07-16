@@ -5,15 +5,20 @@ export function HeroIntro() {
   return (
     <div>
       <Reveal trigger="mount">
-        <div className="mb-[18px] flex items-center gap-2.5 text-[15px] text-muted">
-          Hello, I&apos;m <span className="text-xs text-accent">◆</span>
+        <div className="text-muted mb-[18px] flex items-center gap-2.5 text-[15px]">
+          Hello, I&apos;m <span className="text-accent text-xs">◆</span>
         </div>
       </Reveal>
-      <h1 className="m-0 text-[clamp(52px,9vw,140px)] font-extrabold leading-[0.9] tracking-[-0.04em]">
+      <h1 className="m-0 text-[clamp(52px,9vw,140px)] leading-[0.9] font-extrabold tracking-[-0.04em]">
         <Reveal trigger="mount" as="span" className="block">
           GAURAV
         </Reveal>
-        <Reveal trigger="mount" delay={90} as="span" className="text-gradient block">
+        <Reveal
+          trigger="mount"
+          delay={90}
+          as="span"
+          className="text-gradient block"
+        >
           MATHPAL
         </Reveal>
       </h1>
@@ -23,8 +28,9 @@ export function HeroIntro() {
         </p>
       </Reveal>
       <Reveal trigger="mount" delay={220}>
-        <p className="mt-4 max-w-[440px] text-base leading-[1.6] text-muted">
-          I build products that solve real problems while documenting my journey.
+        <p className="text-muted mt-4 max-w-[440px] text-base leading-[1.6]">
+          I build products that solve real problems while documenting my
+          journey.
         </p>
       </Reveal>
       <Reveal trigger="mount" delay={300}>

@@ -11,16 +11,16 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative z-[2] flex flex-wrap items-center justify-between gap-5 border-t border-brd bg-bg-2 px-5 py-12 sm:px-8 lg:px-14">
+    <footer className="border-brd bg-bg-2 relative z-[2] flex flex-wrap items-center justify-between gap-5 border-t px-5 py-12 sm:px-8 lg:px-14">
       <div>
         <div className="font-sans text-2xl font-extrabold tracking-tight">
           GM<span className="text-accent">.</span>
         </div>
-        <div className="mt-1.5 text-sm text-faint">
+        <div className="text-faint mt-1.5 text-sm">
           © {year} {site.name}. All rights reserved.
         </div>
       </div>
-      <div className="flex gap-6 text-sm text-muted">
+      <div className="text-muted flex gap-6 text-sm">
         {FOOTER_LINKS.map((link) => (
           <TransitionLink
             key={link.href}

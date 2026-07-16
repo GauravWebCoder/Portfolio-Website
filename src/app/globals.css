@@ -59,6 +59,7 @@ body {
 
 html {
   scroll-behavior: smooth;
+  overscroll-behavior-y: none;
 }
 
 body {
@@ -137,69 +138,40 @@ button {
   }
 }
 
-@media (max-width: 1023px) {
-  .fan-card-left,
-  .fan-card-right {
-    margin-top: 0;
-  }
-  .fan-card-left:hover,
-  .fan-card-right:hover {
-    margin-top: 0;
-  }
-}
-
 .fan-card {
+  transform: rotate(var(--card-rotate, 0deg));
   transition:
-    transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1),
-    margin-top 0.55s cubic-bezier(0.2, 0.7, 0.2, 1),
-    box-shadow 0.55s ease;
+    transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 0.45s ease;
+  box-shadow:
+    0 30px 60px -20px rgba(0, 0, 0, 0.75),
+    0 16px 40px -20px rgba(124, 102, 255, 0.25);
+  will-change: transform;
+}
+@media (hover: hover) and (pointer: fine) {
+  .fan-card:hover {
+    transform: rotate(0deg) translateY(-16px) scale(1.045);
+    box-shadow:
+      0 40px 85px -18px rgba(124, 102, 255, 0.45),
+      0 24px 60px -16px rgba(124, 102, 255, 0.35);
+  }
 }
 
-.fan-card-left {
-  transform: rotate(-17deg);
-  margin-top: 72px;
-  box-shadow:
-    0 35px 70px -20px rgba(0, 0, 0, 0.8),
-    0 18px 45px -22px rgba(124, 102, 255, 0.25);
+.fan-card-scroller {
+  cursor: grab;
+  will-change: scroll-position;
 }
-.fan-card-left:hover {
-  transform: rotate(-5deg) translateY(-22px) scale(1.045);
-  margin-top: 52px;
-  box-shadow:
-    0 45px 95px -20px rgba(0, 0, 0, 0.6),
-    0 30px 80px -16px rgba(124, 102, 255, 0.45);
-}
-
-.fan-card-center {
-  transform: scale(1.02);
-  box-shadow:
-    0 45px 100px -20px rgba(0, 0, 0, 0.7),
-    0 25px 70px -18px rgba(124, 102, 255, 0.45);
-}
-.fan-card-center:hover {
-  transform: translateY(-24px) scale(1.07);
-  box-shadow:
-    0 55px 120px -20px rgba(0, 0, 0, 0.55),
-    0 30px 80px -16px rgba(124, 102, 255, 0.4);
-}
-
-.fan-card-right {
-  transform: rotate(17deg);
-  margin-top: 72px;
-  box-shadow:
-    0 35px 70px -20px rgba(0, 0, 0, 0.8),
-    0 18px 45px -22px rgba(124, 102, 255, 0.25);
-}
-.fan-card-right:hover {
-  transform: rotate(5deg) translateY(-22px) scale(1.045);
-  margin-top: 52px;
-  box-shadow:
-    0 45px 95px -20px rgba(0, 0, 0, 0.6),
-    0 30px 80px -16px rgba(124, 102, 255, 0.45);
+.fan-card-scroller.is-dragging {
+  cursor: grabbing;
 }
 
 .fan-card-sheen {
-  background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.08) 50%, transparent 70%);
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 70%
+  );
 }
 
 .ambient-blob {
