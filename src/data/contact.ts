@@ -16,8 +16,8 @@ export type SocialLink = {
 };
 
 export const SOCIAL_LINKS: SocialLink[] = [
-  { label: "LinkedIn", icon: FaLinkedinIn, href: null },
-  { label: "GitHub", icon: FaGithub, href: null },
-  { label: "X", icon: FaXTwitter, href: null },
-  { label: "YouTube", icon: FaYoutube, href: null },
+  { label: "LinkedIn", icon: FaLinkedinIn, href: "https://www.linkedin.com/in/gaurav-mathpal/"},
+  { label: "GitHub", icon: FaGithub, href: "https://github.com/GauravMathpal" },
+  { label: "X", icon: FaXTwitter, href: "https://twitter.com" },
+  { label: "YouTube", icon: FaYoutube, href: "https://youtube.com" },
 ];

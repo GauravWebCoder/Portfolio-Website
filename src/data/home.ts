@@ -9,33 +9,37 @@ export type ExploreCard = {
 
 export const EXPLORE_CARDS: ExploreCard[] = [
   {
-    href: "/skills",
-    eyebrow: "SKILLS",
-    title: "Java, React, Node & more",
-    description: "Languages, frameworks and tools I build with day to day.",
-    cta: "See all skills ↗",
-  },
-  {
-    href: "/about",
-    eyebrow: "ABOUT",
-    title: "1st year CSE student",
-    description: "Based in Uttarakhand, India — building products and learning in public.",
-    cta: "Read more ↗",
-  },
-  {
-    href: "/journey",
-    eyebrow: "JOURNEY",
-    title: "From first line of code to Orbit",
-    description: "A timeline of what I've learned and shipped since 2024.",
-    cta: "View timeline ↗",
-  },
-  {
-    href: "/blog",
-    eyebrow: "BLOG",
-    title: "Writing is next",
-    description: "First post drops once Orbit ships. Nothing here yet.",
-    cta: "Check back ↗",
-  },
+  href: "/skills",
+  eyebrow: "TOOLKIT",
+  title: "Always learning, always building.",
+  description:
+    "Currently focused on HTML, CSS, JavaScript and the MERN stack while exploring modern web development.",
+  cta: "Explore toolkit ↗",
+},
+{
+  href: "/about",
+  eyebrow: "ABOUT",
+  title: "Building one step at a time.",
+  description:
+    "Based in Uttarakhand, India — a B.Tech CSE student documenting my journey through projects and YouTube.",
+  cta: "Know my story ↗",
+},
+{
+  href: "/journey",
+  eyebrow: "JOURNEY",
+  title: "The journey has just begun.",
+  description:
+    "Follow my path from discovering programming to building products, sharing every milestone along the way.",
+  cta: "View timeline ↗",
+},
+{
+  href: "/blog",
+  eyebrow: "BLOG",
+  title: "Lessons from the journey.",
+  description:
+    "A place where I'll share what I'm learning, building, and discovering throughout my engineering journey.",
+  cta: "Coming soon ↗",
+},
   {
     href: "/resume",
     eyebrow: "RESUME",

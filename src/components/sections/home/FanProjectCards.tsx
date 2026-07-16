@@ -47,8 +47,8 @@ export function FanProjectCards() {
           className="fan-card fan-card-right group relative block w-[clamp(210px,19vw,280px)] shrink-0 snap-center overflow-hidden rounded-[32px] border border-brd bg-card-2 p-7 backdrop-blur-[5px] lg:-ml-14"
         >
           {sheen}
-          <div className="font-sans text-[22px] font-bold">TimeArena</div>
-          <div className="mb-3.5 text-sm text-faint">Gaming Platform</div>
+          <div className="font-sans text-[22px] font-bold">School Management System</div>
+          <div className="mb-3.5 text-sm text-faint">Platform</div>
           <div className="h-[140px] overflow-hidden rounded-xl border border-brd">
             <CityscapeMotif />
           </div>

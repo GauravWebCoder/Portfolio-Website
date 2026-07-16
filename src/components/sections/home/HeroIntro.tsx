@@ -19,7 +19,7 @@ export function HeroIntro() {
       </h1>
       <Reveal trigger="mount" delay={160}>
         <p className="mt-[26px] text-[clamp(18px,2vw,24px)] font-medium tracking-[-0.01em]">
-          Software Engineer. Product Builder. Creator.
+          Computer Science Student. Product Builder. Creator
         </p>
       </Reveal>
       <Reveal trigger="mount" delay={220}>

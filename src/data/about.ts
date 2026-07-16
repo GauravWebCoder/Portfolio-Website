@@ -1,7 +1,6 @@
 export const BIO_PARAGRAPHS = [
   "A Computer Science student who loves turning ideas into products.",
-  "I'm a 1st year B.Tech CSE student who is passionate about building solutions that make a difference. I enjoy working with modern technologies, exploring new tools and continuously learning.",
-  "Currently focused on building Orbit and sharing my journey on YouTube.",
+  "A 1st-year B.Tech Computer Science student from Uttarakhand, India, passionate about building thoughtful digital products. I enjoy turning ideas into polished web experiences, exploring modern technologies, and learning through real-world projects. Alongside building, I document my journey on YouTube—sharing what I create, what I learn, and the progress of becoming the developer I aspire to be.",
 ];
 
 export const FACTS = [

@@ -18,7 +18,7 @@ export default function SkillsPage() {
     <section className="px-5 pt-[150px] pb-[100px] sm:px-8 lg:px-14">
       <Container>
         <SectionHeading eyebrow="SKILLS" className="mb-11">
-          What I work with.
+          Current ToolKit.
         </SectionHeading>
         <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-[22px]">
           <RevealGroup>

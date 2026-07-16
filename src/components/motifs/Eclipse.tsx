@@ -10,7 +10,7 @@ export function Eclipse() {
   return (
     <div
       aria-hidden="true"
-      className="eclipse-wrap pointer-events-none absolute top-[44%] right-[-8%] z-0 size-[min(78vh,820px)] -translate-y-1/2"
+      className="eclipse-wrap pointer-events-none absolute top-[44%] right-[-8%] z-0 hidden size-[min(78vh,820px)] -translate-y-1/2 md:block"
     >
       <motion.div style={{ y, position: "relative", width: "100%", height: "100%" }}>
         <div

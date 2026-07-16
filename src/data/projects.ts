@@ -22,8 +22,8 @@ export type Project = {
 export const PROJECTS: Project[] = [
   {
     slug: "orbit",
-    name: "Orbit",
-    tag: "Featured",
+    name: "Orbit OS",
+    tag: "Concept",
     category: "platforms",
     description:
       "An all-in-one platform for students to manage academics, tasks, notes and resources in one place.",
@@ -43,10 +43,10 @@ export const PROJECTS: Project[] = [
       "Real-time music platform to listen together, chat together with friends across the world.",
     stack: ["React", "Socket.io", "Supabase", "Tailwind"],
     motif: "waveform",
-    github: "https://github.com/example/vibetune",
-    liveUrl: "https://example.com/vibetune",
-    youtube: "https://youtube.com/watch?v=example-vibetune",
-    linkedin: "https://linkedin.com/posts/example-vibetune",
+    github: "https://github.com/GauravMathpal/VibeTune",
+    liveUrl: "https://vibetune-mu.vercel.app/",
+    youtube: "https://youtube.com/",
+    linkedin: "https://www.linkedin.com/posts/gaurav-mathpal_vibetune-ai-reactjs-ugcPost-7385353050099621888-ikCS/?highlightedUpdateUrn=urn%3Ali%3Aactivity%3A7385353051718619137&highlightedUpdateType=SOCIAL_SHARE&origin=SOCIAL_SHARE&utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAFYnNE0BWsJsUZpRSEAqwf3XCmIT2vy1syA",
   },
   {
     slug: "portfolio",
@@ -54,33 +54,47 @@ export const PROJECTS: Project[] = [
     tag: "Live",
     category: "web-apps",
     description:
-      "You are looking at it right now. Built with love and lots of coffee, animated end to end.",
+      "My personal portfolio, designed and built from scratch to showcase my projects, document my journey, and experiment with modern web interactions.",
     stack: ["Next.js", "Framer Motion", "Tailwind"],
     motif: "portfolio",
-    github: "https://github.com/example/portfolio",
-    liveUrl: "/",
-    youtube: "https://youtube.com/watch?v=example-portfolio",
-    linkedin: "https://linkedin.com/posts/example-portfolio",
+    github: "https://github.com/GauravMathpal/Portfolio-Website",
+    liveUrl: "https://gauravmathpal.dev/",
+    youtube: "https://youtube.com",
+    linkedin: "https://linkedin.com/gaurav-mathpal",
   },
   {
-    slug: "timearena",
-    name: "TimeArena",
+    slug: "School-Management-System",
+    name: "School Management System",
+    tag: "Live",
+    category: "platforms",
+    description:
+      "Built my first website — a School Management System using WordPress for my school. Didn't have its source code now.",
+    stack: ["Was Lived on WordPress"],
+    motif: "cityscape",
+    github: "https://github.com/GauravMathpal",
+    liveUrl: "https://gauravmathpal.dev/",
+    youtube: "https://youtube.com",
+    linkedin: "https://linkedin.com/Gaurav-Mathpal",
+  },
+  {
+    slug: "Upcoming",
+    name: "Next Project",
     tag: "Concept",
     category: "platforms",
     description:
-      "Gaming platform concept with tournaments and leaderboards for competitive players.",
-    stack: ["Next.js", "TypeScript", "Tailwind"],
+      "Maybe your idea? I'm always open to collaborations and new opportunities. Let's build something amazing together.",
+    stack: ["CommingSoon™"],
     motif: "cityscape",
-    github: "https://github.com/example/timearena",
-    liveUrl: "https://example.com/timearena",
-    youtube: "https://youtube.com/watch?v=example-timearena",
-    linkedin: "https://linkedin.com/posts/example-timearena",
+    github: "https://github.com/GauravMathpal",
+    liveUrl: "https://gauravmathpal.dev/",
+    youtube: "https://youtube.com",
+    linkedin: "https://linkedin.com/Gaurav-Mathpal",
   },
 ];
 
-export const PROJECT_FILTERS: { key: "all" | ProjectCategory; label: string }[] = [
-  { key: "all", label: "All" },
-  { key: "web-apps", label: "Web Apps" },
-  { key: "tools", label: "Tools" },
-  { key: "platforms", label: "Platforms" },
-];
+// export const PROJECT_FILTERS: { key: "all" | ProjectCategory; label: string }[] = [
+//   { key: "all", label: "All" },
+//   { key: "web-apps", label: "Web Apps" },
+//   { key: "tools", label: "Tools" },
+//   { key: "platforms", label: "Platforms" },
+// ];
