@@ -92,9 +92,9 @@ export const PROJECTS: Project[] = [
   },
 ];
 
-// export const PROJECT_FILTERS: { key: "all" | ProjectCategory; label: string }[] = [
-//   { key: "all", label: "All" },
-//   { key: "web-apps", label: "Web Apps" },
-//   { key: "tools", label: "Tools" },
-//   { key: "platforms", label: "Platforms" },
-// ];
+export const PROJECT_FILTERS: { key: "all" | ProjectCategory; label: string }[] = [
+  { key: "all", label: "All" },
+  { key: "web-apps", label: "Web Apps" },
+  { key: "tools", label: "Tools" },
+  { key: "platforms", label: "Platforms" },
+];
