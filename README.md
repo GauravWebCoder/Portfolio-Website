@@ -33,6 +33,8 @@ A modern productivity platform for students featuring tasks, calendar, focus ses
 # 🎵 VibeTune
 A real-time collaborative music platform built for synchronized listening experiences.
 
+
+
 <img width="1600" height=100% alt="image" src="https://github.com/user-attachments/assets/6c7468bc-a6f1-4a52-a75c-7703ff2ed479" />
 
 <img width="1600" height=100% alt="image" src="https://github.com/user-attachments/assets/063a4931-4c6f-4929-b169-1bbdebee323b" />
