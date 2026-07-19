@@ -26,9 +26,7 @@ export const PROJECTS: Project[] = [
       "An all-in-one platform for students to manage academics, tasks, notes and resources in one place.",
     stack: ["Next.js", "Node.js", "PostgreSQL", "Tailwind"],
     motif: "orbit",
-    github: "https://github.com/GauravMathpal",
-    liveUrl: "https://gauravmathpal.dev",
-    youtube: "https://youtube.com",
+    liveUrl: "https://orbit.gauravmathpal.dev",
     linkedin: "https://linkedin.com/gaurav-mathpal",
   },
   {
